@@ -39,6 +39,7 @@ jobs:
             profile == "development"
           fi    
           echo curr_env
+          echo profile
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.0.0   
         with:
