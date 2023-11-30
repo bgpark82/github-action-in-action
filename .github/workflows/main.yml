@@ -13,6 +13,7 @@ jobs:
       - name: echo
         run: |
           echo pwd
-          echo 
+          echo npm --version
+          echo node --version
         
   
