@@ -1,0 +1,11 @@
+name: job test
+on: push
+jobs:
+  hello1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "HELLO" > hello.txt
+  hello2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "HELLO, WORLD" > hello1.txt
