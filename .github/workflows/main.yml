@@ -37,7 +37,7 @@ jobs:
           pwd
           npm --version
           node --version
-          echo ${{input.service}}
+          echo ${{inputs.service}}
           
         
   
