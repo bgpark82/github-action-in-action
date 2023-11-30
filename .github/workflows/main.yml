@@ -4,14 +4,12 @@ jobs:
   web:
     name: deploy web
     runs-on: ubuntu-22.04
+    defaults:
+      run: 
+        working-directory: ./web
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: cd
-        run: |
-          pwd
-          cd web
-          pwd
       - name: echo
         run: |
           pwd
