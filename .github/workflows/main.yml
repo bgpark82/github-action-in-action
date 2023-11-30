@@ -58,7 +58,8 @@ jobs:
           npm --version
           node --version
           echo ${{inputs.service}}
-          echo profile
+          echo $curr_env
+          echo $profile
           
         
   
