@@ -11,16 +11,31 @@ on:
         options:
           - web
           - api
-        
+      env:
+        description: 환경
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - prod
 jobs:
   web:
-    if: ${{inputs.service == web }} 
+    if: ${{inputs.service == 'web' }} 
     name: deploy web
     runs-on: ubuntu-22.04
     defaults:
       run: 
         working-directory: ./web
     steps:
+      - env:
+        run: |
+          curr_env = "${{ inputs.env }}"
+          if [[ "$curr_env" == "prod" ]]; then
+            profile == "production"
+          else
+            profile == "development"
+          fi    
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Node.js environment
@@ -39,6 +54,7 @@ jobs:
           npm --version
           node --version
           echo ${{inputs.service}}
+          echo profile
           
         
   
