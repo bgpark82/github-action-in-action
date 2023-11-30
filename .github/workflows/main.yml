@@ -28,7 +28,7 @@ jobs:
       run: 
         working-directory: ./web
     steps:
-      - env: env
+      - name: env
         run: |
           curr_env = "${{ inputs.env }}"
           if [[ "$curr_env" == "prod" ]]; then
