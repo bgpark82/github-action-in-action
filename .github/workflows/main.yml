@@ -1,11 +1,18 @@
 name: job test
 on: push
 jobs:
-  hello1:
-    runs-on: ubuntu-latest
+  web:
+    name: deploy web
+    runs-on: ubuntu-22.04
     steps:
-      - run: echo "HELLO" > hello.txt
-  hello2:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "HELLO, WORLD" > hello1.txt
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: cd
+        run: |
+          cd web
+      - name: echo
+        run: |
+          echo pwd
+          echo 
+        
+  
