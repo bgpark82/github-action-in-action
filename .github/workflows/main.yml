@@ -12,8 +12,8 @@ jobs:
           cd web
       - name: echo
         run: |
-          echo pwd
-          echo npm --version
-          echo node --version
+          pwd
+          npm --version
+          node --version
         
   
