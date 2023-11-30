@@ -14,7 +14,7 @@ on:
         
 jobs:
   web:
-    if: ${{inputs.service}} == 'web'
+    if: ${{inputs.service == 'web' }} 
     name: deploy web
     runs-on: ubuntu-22.04
     defaults:
